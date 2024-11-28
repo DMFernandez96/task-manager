@@ -3,7 +3,7 @@ import TaskTable from "./TaskTable";
 
 function TaskSection({ tareas, eliminarTarea, editarTarea }) {
   return (
-    <main>
+    <div className="task-section">
       <div className="task-actions">
         <button className="btn-create">Crear tarea</button>
         <input
@@ -17,7 +17,7 @@ function TaskSection({ tareas, eliminarTarea, editarTarea }) {
         eliminarTarea={eliminarTarea}
         editarTarea={editarTarea}
       />
-    </main>
+    </div>
   );
 }
 
