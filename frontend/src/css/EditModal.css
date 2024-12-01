@@ -1,0 +1,21 @@
+.custom-modal-bg {
+	display: block;
+  background: rgba(0, 0, 0, 0.8);
+  
+}
+
+.custom-input {
+  background-color: #333 !important;
+  color: white !important;
+  border: 1px solid #555 !important;
+}
+
+/* Personalizar efecto de cierre para el modal */
+.modal.fade .modal-dialog {
+  transform: translateY(-50px);
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.modal.show .modal-dialog {
+  transform: translateY(0);
+}

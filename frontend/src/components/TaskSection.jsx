@@ -3,13 +3,13 @@ import TaskTable from "./TaskTable";
 
 function TaskSection({ tareas, eliminarTarea, editarTarea }) {
   return (
-    <main>
-      <div className="task-actions">
-        <button className="btn-create">Crear tarea</button>
+    <section className="container my-4">
+      <div className="d-flex justify-content-between mb-4">
+        <button className="btn btn-primary">Crear tarea</button>
         <input
           type="text"
           placeholder="Buscar tarea..."
-          className="search-bar"
+          className="form-control w-25"
         />
       </div>
       <TaskTable
@@ -17,7 +17,7 @@ function TaskSection({ tareas, eliminarTarea, editarTarea }) {
         eliminarTarea={eliminarTarea}
         editarTarea={editarTarea}
       />
-    </main>
+    </section>
   );
 }
 
