@@ -26,7 +26,7 @@ const all = (req, res) => {
       res.status(400).json({ error: err.message });
       return;
     }
-    res.json({ data: rows });
+    res.json(rows);
   });
 };
 
@@ -66,14 +66,12 @@ const create = (req, res) => {
           }
           res.json({
             message: "Tarea creada exitosamente!",
-            data: {
-              id_tarea: this.lastID,
-              titulo,
-              contenido,
-              id_usuario,
-              id_estado,
-              id_prioridad,
-            },
+            id_tarea: this.lastID,
+            titulo,
+            contenido,
+            id_usuario,
+            id_estado,
+            id_prioridad,
           });
         });
       });
