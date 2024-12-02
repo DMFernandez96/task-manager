@@ -32,7 +32,9 @@ const all = (req, res) => {
 
 //crear tarea
 const create = (req, res) => {
-  const { titulo, contenido, id_usuario, id_estado, id_prioridad } = req.body;
+  const { titulo, contenido, id_estado, id_prioridad } = req.body;
+
+	const id_usuario = req.body.id_usuario || 1;
 
   if (!titulo || !contenido || !id_usuario || !id_estado || !id_prioridad) {
     return res.status(400).json({ error: "Debe ingresar todos los campos" });
