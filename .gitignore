@@ -38,4 +38,4 @@ pnpm-debug.log*
 # Base de datos
 /database/*.sqlite
 /database/*.sql
-
+/database/*.db

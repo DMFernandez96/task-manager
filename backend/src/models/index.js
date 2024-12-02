@@ -26,13 +26,15 @@ const all = (req, res) => {
       res.status(400).json({ error: err.message });
       return;
     }
-    res.json({ data: rows });
+    res.json(rows);
   });
 };
 
 //crear tarea
 const create = (req, res) => {
-  const { titulo, contenido, id_usuario, id_estado, id_prioridad } = req.body;
+  const { titulo, contenido, id_estado, id_prioridad } = req.body;
+
+	const id_usuario = req.body.id_usuario || 1;
 
   if (!titulo || !contenido || !id_usuario || !id_estado || !id_prioridad) {
     return res.status(400).json({ error: "Debe ingresar todos los campos" });
@@ -66,14 +68,12 @@ const create = (req, res) => {
           }
           res.json({
             message: "Tarea creada exitosamente!",
-            data: {
-              id_tarea: this.lastID,
-              titulo,
-              contenido,
-              id_usuario,
-              id_estado,
-              id_prioridad,
-            },
+            id_tarea: this.lastID,
+            titulo,
+            contenido,
+            id_usuario,
+            id_estado,
+            id_prioridad,
           });
         });
       });

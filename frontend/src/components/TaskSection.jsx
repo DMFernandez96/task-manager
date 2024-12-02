@@ -1,11 +1,22 @@
 import React from "react";
 import TaskTable from "./TaskTable";
 
-function TaskSection({ tareas, eliminarTarea, editarTarea }) {
+function TaskSection({
+  tareas,
+  eliminarTarea,
+  editarTarea,
+  setMostrarModalCrear,
+}) {
   return (
     <section className="container my-4">
       <div className="d-flex justify-content-between mb-4">
-        <button className="btn btn-primary">Crear tarea</button>
+        <button
+          className="btn btn-primary"
+          onClick={() => setMostrarModalCrear(true)}
+        >
+          Crear tarea
+        </button>
+
         <input
           type="text"
           placeholder="Buscar tarea..."
